@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:food_delivery/modules/auth/providers/login.provider.auth.dart';
 import 'package:food_delivery/modules/auth/providers/register.provider.auth.dart';
+import 'package:food_delivery/modules/shop/pages/store.dart';
 import 'package:food_delivery/modules/shop/providers/navigation.provider.shop.dart';
 import 'package:food_delivery/modules/shop/providers/shop.provider.dart';
-import 'package:food_delivery/modules/splash.dart';
 import 'package:food_delivery/services/index.dart';
 import 'package:food_delivery/services/location.service.dart';
 import 'package:food_delivery/utils/managers/dialog.manager.dart';
@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
           builder: (context) => DialogManager(child: widget!),
         ),
       ),
-      home: const SplashScreen(),
+      home: const StoreFront(),
     );
   }
 }
