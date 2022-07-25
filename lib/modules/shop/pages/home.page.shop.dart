@@ -225,7 +225,7 @@ class _HomePageState extends State<HomePage> {
 
                     return GridView.count(
                       crossAxisCount: 2,
-                      childAspectRatio: 0.76,
+                      childAspectRatio: 0.68,
                       crossAxisSpacing: sx(20),
                       mainAxisSpacing: sy(10),
                       children: products.map((Product product) {

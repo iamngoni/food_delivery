@@ -49,5 +49,7 @@
     <string>Location is required for saving accurate addresses</string>
     <key>NSLocationAlwaysAndWhenInUsageDescription</key>
     <string>Location is required for saving accurate addresses</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 </dict>
 </plist>
