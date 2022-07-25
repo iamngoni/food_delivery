@@ -312,20 +312,21 @@ class _ProductPageState extends State<ProductPage> {
                           return Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              RichText(
-                                text: TextSpan(
+                              Expanded(
+                                child: Row(
                                   children: [
-                                    TextSpan(
-                                      text: "Total:",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: sy(10),
+                                    Expanded(
+                                      child: Text(
+                                        "Total:",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: sy(10),
+                                        ),
                                       ),
                                     ),
-                                    TextSpan(
-                                      text:
-                                          " ${provider.totalProductCostInCart(widget.product) > 1000 ? provider.totalProductCostInCart(widget.product).money.compactSymbolOnLeft : provider.totalProductCostInCart(widget.product).money.symbolOnLeft}",
+                                    Text(
+                                      " ${provider.totalProductCostInCart(widget.product) > 1000 ? provider.totalProductCostInCart(widget.product).money.compactSymbolOnLeft : provider.totalProductCostInCart(widget.product).money.symbolOnLeft}",
                                       style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w900,
@@ -335,20 +336,24 @@ class _ProductPageState extends State<ProductPage> {
                                   ],
                                 ),
                               ),
-                              RichText(
-                                text: TextSpan(
+                              SizedBox(
+                                width: sx(10),
+                              ),
+                              Expanded(
+                                child: Row(
                                   children: [
-                                    TextSpan(
-                                      text: "Cart Total:",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: sy(10),
+                                    Expanded(
+                                      child: Text(
+                                        "Cart Total:",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: sy(10),
+                                        ),
                                       ),
                                     ),
-                                    TextSpan(
-                                      text:
-                                          " ${provider.cartTotal > 1000 ? provider.cartTotal.money.compactSymbolOnLeft : provider.cartTotal.money.symbolOnLeft}",
+                                    Text(
+                                      " ${provider.cartTotal > 1000 ? provider.cartTotal.money.compactSymbolOnLeft : provider.cartTotal.money.symbolOnLeft}",
                                       style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w900,
