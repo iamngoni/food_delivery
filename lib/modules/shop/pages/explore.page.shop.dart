@@ -41,7 +41,7 @@ class _ExplorePageState extends State<ExplorePage> {
               child: Consumer<ShopProvider>(builder: (context, provider, _) {
                 return GridView.count(
                   crossAxisCount: 2,
-                  childAspectRatio: 0.76,
+                  childAspectRatio: 0.68,
                   crossAxisSpacing: sx(20),
                   mainAxisSpacing: sy(10),
                   children: provider.products.map((Product product) {

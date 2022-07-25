@@ -1,4 +1,4 @@
-package com.tngrill.food_delivery
+package zw.co.iamgoni.food_delivery
 
 import io.flutter.embedding.android.FlutterActivity
 
