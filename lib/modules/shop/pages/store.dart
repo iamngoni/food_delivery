@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:food_delivery/configs/theme.config.dart';
 import 'package:food_delivery/modules/shop/providers/navigation.provider.shop.dart';
 import 'package:food_delivery/modules/shop/providers/shop.provider.dart';
@@ -19,28 +18,25 @@ class _StoreFrontState extends State<StoreFront> {
   Widget build(BuildContext context) {
     return RelativeBuilder(builder: (context, height, width, sy, sx) {
       return Consumer<NavigationProvider>(builder: (context, provider, _) {
-        return PlatformScaffold(
-          body: Container(
-            height: context.height,
-            width: context.width,
-            padding: EdgeInsets.symmetric(
-              horizontal: sx(20),
-            ),
-            child: PageView(
-              controller: provider.pageController,
-              physics: const NeverScrollableScrollPhysics(),
-              children: provider.pages,
+        return Scaffold(
+          body: SafeArea(
+            child: Container(
+              height: context.height,
+              width: context.width,
+              padding: EdgeInsets.symmetric(
+                horizontal: sx(20),
+              ),
+              child: PageView(
+                controller: provider.pageController,
+                physics: const NeverScrollableScrollPhysics(),
+                children: provider.pages,
+              ),
             ),
           ),
-          bottomNavBar: PlatformNavBar(
-            material: (BuildContext context, PlatformTarget target) {
-              return MaterialNavBarData(
-                type: BottomNavigationBarType.fixed,
-                selectedItemColor: AppColors.darkBlue,
-              );
-            },
+          bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
             currentIndex: provider.currentIndex,
-            itemChanged: (int? index) => provider.currentIndex = index!,
+            onTap: (int? index) => provider.currentIndex = index!,
             items: [
               const BottomNavigationBarItem(
                 icon: ImageIcon(
